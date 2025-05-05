@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ItoDev Studio | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <header id="hero">
+    <h1>ItoDev Studio</h1>
+    <p>業務効率を3倍にする社内Web開発エンジニア<br>現場の“紙とExcel”を PHP+jQuery で Web 化。小さな困りごとを最速で形にします。</p>
+    <a href="#contact" class="cta" aria-label="お問い合わせへ移動">相談してみる</a>
+    <button id="themeToggle" aria-label="テーマ切替">🌓</button>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>ビルメンテナンス会社で設備員→社内開発者へ転身。<br>
+      設備台帳ビューア・整備計画入力・修繕事案管理・要望トラッカーを内製し、ブラウザ一つで現場業務を完結させました。</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><span>PHP</span><progress value="80" max="100"></progress></li>
+      <li><span>JavaScript / jQuery</span><progress value="80" max="100"></progress></li>
+      <li><span>MySQL / PostgreSQL</span><progress value="60" max="100"></progress></li>
+      <li><span>VBA (Excel / Access)</span><progress value="80" max="100"></progress></li>
+      <li><span>HTML / CSS</span><progress value="60" max="100"></progress></li>
+      <li><span>Git</span><progress value="40" max="100"></progress></li>
+    </ul>
+  </section>
+
+  <section id="works">
+    <h2>Works</h2>
+    <div class="cards">
+      <article>
+        <h3>設備台帳ビューア</h3>
+        <p>PHP / MySQL / Ajax</p>
+        <p>既存DBを横断検索し設備情報を3秒以内に表示。</p>
+      </article>
+      <article>
+        <h3>整備計画入力フォーム</h3>
+        <p>PHP / MySQL / jQuery</p>
+        <p>部品・金額・年度・交換周期を登録しCSV出力。</p>
+      </article>
+      <article>
+        <h3>修繕事案管理ツール</h3>
+        <p>PHP / MySQL / jQuery</p>
+        <p>見積PDF添付と進捗共有で修繕対応を一元化。</p>
+      </article>
+      <article>
+        <h3>要望トラッカー</h3>
+        <p>PHP / MySQL / jQuery</p>
+        <p>画像付き要望を投稿し質問・回答をスレッド管理。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>ご相談・お見積りはメールでお気軽に。</p>
+    <ul>
+      <li><a href="mailto:ito.webdev@gmail.com">✉️ ito.webdev@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <footer><small>&copy; ItoDev Studio</small></footer>
+
+  <script>
+    const s = localStorage.getItem('theme'); if (s === 'dark' || s === 'light') $('html').attr('data-theme', s);
+    $('#themeToggle').on('click', () => { const n = $('html').attr('data-theme') === 'dark' ? 'light' : 'dark'; $('html').attr('data-theme', n); localStorage.setItem('theme', n); });
+    $('a[href^="#"]').on('click', e => { $('html,body').animate({ scrollTop: $($(e.target).attr('href')).offset().top }, 400); return false; });
+  </script>
+</body>
+
+</html>
